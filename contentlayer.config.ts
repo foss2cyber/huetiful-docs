@@ -77,8 +77,8 @@ function createSearchIndex(allBlogs) {
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: 'blog/**/*.mdx',
-  contentType: 'mdx',
+  filePathPattern: 'blog/**/*.md',
+  contentType: 'md',
   fields: {
     title: { type: 'string', required: true },
     date: { type: 'date', required: true },
@@ -112,8 +112,8 @@ export const Blog = defineDocumentType(() => ({
 
 export const Authors = defineDocumentType(() => ({
   name: 'Authors',
-  filePathPattern: 'authors/**/*.mdx',
-  contentType: 'mdx',
+  filePathPattern: 'authors/**/*.md',
+  contentType: 'md',
   fields: {
     name: { type: 'string', required: true },
     avatar: { type: 'string' },
