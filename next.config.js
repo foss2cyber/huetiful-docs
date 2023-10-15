@@ -59,8 +59,11 @@ const securityHeaders = [
  **/
 module.exports = () => {
   const plugins = [withContentlayer, withBundleAnalyzer]
+  const basePath = process.env.NODE_ENV === 'production' ? '/huetiful' : ''
 
   return plugins.reduce((acc, next) => next(acc), {
+    basePath,
+    assetPrefix: `${basePath}/`,
     reactStrictMode: true,
     output: 'export',
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
