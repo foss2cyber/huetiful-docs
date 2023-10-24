@@ -4,8 +4,32 @@ date: '2023-08-29'
 draft: false
 summary: Utilities for performing various low level manipulations and such as querying/setting a color's channel value and other useful conversions.
 layout: PostSimple
-canonicalUrl: https://prjctimg.github.io/huetiful-docs/api/core-utilities
+canonicalUrl: https://huetiful-docs.vercel.app/api/core-utilities
 ---
+
+#### hex
+
+**Parameters:**
+`(color: Color): Color`
+_color_ The color to convert to hexadecimal. Works on color objects and CSS named colors.
+
+**Returns:**
+A hexadecimal representation of the passed in color.
+ 
+**Description:**
+Converts color objects and CSS named colors to hexadecimal.
+
+**Example:**
+
+```javascript
+import { hex } from "huetiful-js";
+
+console.log(hex({ l: 50, c: 31, h: 100, alpha: 0.5, mode: "lch" }))
+// #7b794180
+
+console.log(hex({ l: 50, c: 31, h: 100, mode: "lch" }))
+// #7b7941
+```
 
 #### alpha
 
