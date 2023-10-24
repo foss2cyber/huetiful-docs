@@ -1,5 +1,4 @@
 
-
 ![](huetiful-logo.png)
 
 JavaScript library for simple color manipulations based on the Culori API.
