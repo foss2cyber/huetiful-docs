@@ -1,6 +1,6 @@
 ---
 title: Array methods.
-date: '2023-09-29'
+date: "2023-09-29"
 draft: false
 summary: A collection of utilities for performing various operations on arrays of color tokens such as filtering and sorting.
 layout: PostSimple
@@ -37,7 +37,7 @@ Returns an array of colors with the specified distance range. The distance is te
 **Example:**
 
 ```javascript
-import { filterByDistance } from 'huetiful-js'
+import { filterByDistance } from "huetiful-js";
 
 let sample = [
   "#ffff00",
@@ -48,9 +48,9 @@ let sample = [
   "#164100",
   "#720000",
   "#600000",
-]
+];
 
-console.log(filterByDistance(sample, "yellow", 0.1))
+console.log(filterByDistance(sample, "yellow", 0.1));
 // [ '#ffff00' ]
 ```
 
@@ -71,23 +71,23 @@ Returns an array of colors with the specified contrast range. The contrast is te
 **Example:**
 
 ```javascript
-import { filterByContrast } from 'huetiful-js'
+import { filterByContrast } from "huetiful-js";
 
 let sample = [
-  '#00ffdc',
-  '#00ff78',
-  '#00c000',
-  '#007e00',
-  '#164100',
-  '#ffff00',
-  '#310000',
-  '#3e0000',
-  '#4e0000',
-  '#600000',
-  '#720000',
-]
+  "#00ffdc",
+  "#00ff78",
+  "#00c000",
+  "#007e00",
+  "#164100",
+  "#ffff00",
+  "#310000",
+  "#3e0000",
+  "#4e0000",
+  "#600000",
+  "#720000",
+];
 
-console.log(filterByContrast(sample, 'green', '>=3'))
+console.log(filterByContrast(sample, "green", ">=3"));
 // [ '#00ffdc', '#00ff78', '#ffff00', '#310000', '#3e0000', '#4e0000' ]
 ```
 
@@ -108,22 +108,22 @@ Returns colors in the specified hue ranges between 0 to 360.
 **Example:**
 
 ```javascript
-import { filterByHue } from 'huetiful-js'
+import { filterByHue } from "huetiful-js";
 let sample = [
-  '#00ffdc',
-  '#00ff78',
-  '#00c000',
-  '#007e00',
-  '#164100',
-  '#ffff00',
-  '#310000',
-  '#3e0000',
-  '#4e0000',
-  '#600000',
-  '#720000',
-]
+  "#00ffdc",
+  "#00ff78",
+  "#00c000",
+  "#007e00",
+  "#164100",
+  "#ffff00",
+  "#310000",
+  "#3e0000",
+  "#4e0000",
+  "#600000",
+  "#720000",
+];
 
-filterByHue(sample, 20, 80)
+filterByHue(sample, 20, 80);
 
 // [ '#310000', '#3e0000', '#4e0000', '#600000', '#720000' ]
 ```
@@ -145,22 +145,22 @@ Returns colors in the specified luminance range.The range is normalized to [0,1]
 **Example:**
 
 ```javascript
-import { filterByLuminance } from 'huetiful-js'
+import { filterByLuminance } from "huetiful-js";
 let sample = [
-  '#00ffdc',
-  '#00ff78',
-  '#00c000',
-  '#007e00',
-  '#164100',
-  '#ffff00',
-  '#310000',
-  '#3e0000',
-  '#4e0000',
-  '#600000',
-  '#720000',
-]
+  "#00ffdc",
+  "#00ff78",
+  "#00c000",
+  "#007e00",
+  "#164100",
+  "#ffff00",
+  "#310000",
+  "#3e0000",
+  "#4e0000",
+  "#600000",
+  "#720000",
+];
 
-filterByLuminance(sample, 0.4, 0.9)
+filterByLuminance(sample, 0.4, 0.9);
 
 // [ '#00ffdc', '#00ff78' ]
 ```
@@ -267,22 +267,22 @@ Array of the filtered colors.
 Returns an array of colors in the specified lightness range. The range is between 0 and 100.
 
 ```javascript
-import { filterByLightness } from 'huetiful-js'
+import { filterByLightness } from "huetiful-js";
 let sample = [
-  '#00ffdc',
-  '#00ff78',
-  '#00c000',
-  '#007e00',
-  '#164100',
-  '#ffff00',
-  '#310000',
-  '#3e0000',
-  '#4e0000',
-  '#600000',
-  '#720000',
-]
+  "#00ffdc",
+  "#00ff78",
+  "#00c000",
+  "#007e00",
+  "#164100",
+  "#ffff00",
+  "#310000",
+  "#3e0000",
+  "#4e0000",
+  "#600000",
+  "#720000",
+];
 
-filterByLightness(sample, 20, 80)
+filterByLightness(sample, 20, 80);
 
 // [ '#00c000', '#007e00', '#164100', '#720000' ]
 ```
@@ -484,26 +484,26 @@ Sorts colors according to their tempertaure. Based on [Neil Bartlett's](https://
 **Example:**
 
 ```javascript
-import { sortByTemp } from 'huetiful-js'
+import { sortByTemp } from "huetiful-js";
 let sample = [
-  '#00ffdc',
-  '#00ff78',
-  '#00c000',
-  '#007e00',
-  '#164100',
-  '#ffff00',
-  '#310000',
-  '#3e0000',
-  '#4e0000',
-  '#600000',
-  '#720000',
-]
+  "#00ffdc",
+  "#00ff78",
+  "#00c000",
+  "#007e00",
+  "#164100",
+  "#ffff00",
+  "#310000",
+  "#3e0000",
+  "#4e0000",
+  "#600000",
+  "#720000",
+];
 
-let sorted = sortByTemp(sample)
-console.log(sorted)
+let sorted = sortByTemp(sample);
+console.log(sorted);
 
-let sortedDescending = sortByTemp(sample, 'desc')
-console.log(sortedDescending)
+let sortedDescending = sortByTemp(sample, "desc");
+console.log(sortedDescending);
 ```
 
 #### sortByLightness
@@ -583,23 +583,23 @@ Sorts colors according to their Euclidean distance. The distance factor is deter
 **Example:**
 
 ```javascript
-import { sortByDistance } from 'huetiful-js'
+import { sortByDistance } from "huetiful-js";
 
-let sample = ['purple', 'green', 'red', 'brown']
+let sample = ["purple", "green", "red", "brown"];
 console.log(
-  sortByDistance(sample, 'yellow', 'asc', {
-    mode: 'lch',
+  sortByDistance(sample, "yellow", "asc", {
+    mode: "lch",
   })
-)
+);
 
 // [ 'brown', 'red', 'green', 'purple' ]
 
-let sample = ['purple', 'green', 'red', 'brown']
+let sample = ["purple", "green", "red", "brown"];
 console.log(
-  sortByDistance(sample, 'yellow', 'asc', {
-    mode: 'lch',
+  sortByDistance(sample, "yellow", "asc", {
+    mode: "lch",
   })
-)
+);
 
 // [ 'green', 'brown', 'red', 'purple' ]
 ```
@@ -620,13 +620,13 @@ Sorts colors according to their contrast value as defined by WCAG. The contrast 
 **Example:**
 
 ```javascript
-import { sortByContrast } from 'huetiful-js'
+import { sortByContrast } from "huetiful-js";
 
-let sample = ['purple', 'green', 'red', 'brown']
-console.log(sortByContrast(sample, 'yellow'))
+let sample = ["purple", "green", "red", "brown"];
+console.log(sortByContrast(sample, "yellow"));
 // [ 'red', 'green', 'brown', 'purple' ]
 
-console.log(sortByContrast(sample, 'yellow', 'desc'))
+console.log(sortByContrast(sample, "yellow", "desc"));
 // [ 'purple', 'brown', 'green', 'red' ]
 ```
 
@@ -660,11 +660,11 @@ Returns the smallest hue difference between the passed in color and each element
 **Example:**
 
 ```javascript
-import { getNearestHue } from 'huetiful-js'
+import { getNearestHue } from "huetiful-js";
 
-let sample = ['b2c3f1', '#a1bd2f', '#f3bac1']
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(getNearestHue('lime', sample, 'lch'))
+console.log(getNearestHue("lime", sample, "lch"));
 
 // 23.962083662849253
 ```
@@ -686,9 +686,9 @@ Returns the largest hue difference between the passed in color and each element 
 **Example:**
 
 ```javascript
-import { getFarthestHue } from 'huetiful-js'
+import { getFarthestHue } from "huetiful-js";
 
-console.log(getFarthestHue('lime', sample, 'lch'))
+console.log(getFarthestHue("lime", sample, "lch"));
 // 139.16534433552653
 ```
 
@@ -709,11 +709,11 @@ Gets the smallest hue value from the passed in colors.
 **Example:**
 
 ```javascript
-import { minHue } from 'huetiful-js'
+import { minHue } from "huetiful-js";
 
-let sample = ['b2c3f1', '#a1bd2f', '#f3bac1']
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(minHue(sample, 'lch'))
+console.log(minHue(sample, "lch"));
 // 12.462831644544274
 ```
 
@@ -734,10 +734,10 @@ Gets the largest hue value from the passed in colors.
 **Example:**
 
 ```javascript
-import { maxHue } from 'huetiful-js'
-let sample = ['b2c3f1', '#a1bd2f', '#f3bac1']
+import { maxHue } from "huetiful-js";
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(maxHue(sample, 'lch'))
+console.log(maxHue(sample, "lch"));
 // 273.54920266436477
 ```
 
@@ -758,11 +758,11 @@ Returns the smallest chroma/saturation difference between the passed in color an
 **Example:**
 
 ```javascript
-import { getNearestChroma } from 'huetiful-js'
+import { getNearestChroma } from "huetiful-js";
 
-let sample = ['b2c3f1', '#a1bd2f', '#f3bac1']
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(getNearestChroma('lime', sample, 'lch'))
+console.log(getNearestChroma("lime", sample, "lch"));
 // 46.11029351529832
 ```
 
@@ -783,11 +783,11 @@ Returns the largest chroma/saturation difference between the passed in color and
 **Example:**
 
 ```javascript
-import { getFarthestChroma } from 'huetiful-js'
+import { getFarthestChroma } from "huetiful-js";
 
-let sample = ['b2c3f1', '#a1bd2f', '#f3bac1']
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(getFarthestChroma('lime', sample, 'lch'))
+console.log(getFarthestChroma("lime", sample, "lch"));
 // 90.87480913244802
 ```
 
@@ -807,11 +807,11 @@ Gets the smallest chroma/saturation value from the passed in colors.
 **Example:**
 
 ```javascript
-import { minChroma } from 'huetiful-js'
+import { minChroma } from "huetiful-js";
 
-let sample = ['b2c3f1', '#a1bd2f', '#f3bac1']
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(minChroma(sample, 'lch'))
+console.log(minChroma(sample, "lch"));
 // 22.45669293295522
 ```
 
@@ -832,34 +832,35 @@ Gets the largest chroma/saturation value from the passed in colors.
 **Example:**
 
 ```javascript
-import { maxChroma } from 'huetiful-js'
+import { maxChroma } from "huetiful-js";
 
-let sample = ['b2c3f1', '#a1bd2f', '#f3bac1']
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(maxChroma(sample, 'lch'))
+console.log(maxChroma(sample, "lch"));
 // 67.22120855010492
 ```
 
 #### getNearestLightness
- 
+
 **Parameters:**
 `(color: Color, colors: Color[]): number`
 _color_ The color to use its lightness value as the minuend.
 _colors_ The collection of colors to compare against.
 
 **Returns:**
- The lightness value from the color with the smallest lightness distance.
- 
+The lightness value from the color with the smallest lightness distance.
+
 **Description:**
 Returns the smallest lightness difference between the passed in color and each element in the colors collection.
 
 **Example:**
+
 ```javascript
-import { getNearestLightness } from 'huetiful-js'
+import { getNearestLightness } from "huetiful-js";
 
-let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"]
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(getNearestLightness("green", sample))
+console.log(getNearestLightness("green", sample));
 
 //26.338769793418493
 ```
@@ -875,18 +876,18 @@ _colors_ The collection of colors to compare against.
 The lightness value from the color with the largest lightness distance.
 
 **Description:**
-Returns the largest lightness difference between the passed in color and each element in the colors collection. 
+Returns the largest lightness difference between the passed in color and each element in the colors collection.
 
 **Example:**
+
 ```javascript
-import { getFarthestLightness } from 'huetiful-js'
+import { getFarthestLightness } from "huetiful-js";
 
-let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"]
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(getFarthestLightness("green", sample))
+console.log(getFarthestLightness("green", sample));
 
 // 34.668980006120606
-
 ```
 
 #### minLightness
@@ -894,7 +895,7 @@ console.log(getFarthestLightness("green", sample))
 **Parameters:**
 `(colors: Color[],colorObj = false):number`
 _colors_ The array of colors to query the color with the smallest lightness value.
- _colorObj_ Optional boolean that makes the function return a custom object with factor (lightness) and name of the color as keys. Default is false.
+_colorObj_ Optional boolean that makes the function return a custom object with factor (lightness) and name of the color as keys. Default is false.
 
 **Returns:**
 The smallest lightness value in the colors passed in or a custom object.
@@ -903,23 +904,23 @@ The smallest lightness value in the colors passed in or a custom object.
 Gets the smallest lightness value from the passed in colors.
 
 **Example:**
+
 ```javascript
-import { minLightness } from 'huetiful-js'
+import { minLightness } from "huetiful-js";
 
-let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"]
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(minLightness(sample, true))
+console.log(minLightness(sample, true));
 
 // { lightness: 72.61647882089876, name: '#a1bd2f' }
-
 ```
 
 #### maxLightness
- 
+
 **Parameters:**
 `(colors: Color[],colorObj = false):number`
- _colors_ The array of colors to query the color with the largest lightness value.
- _colorObj_ Optional boolean that makes the function return a custom object with factor (lightness) and name of the color as keys. Default is false.
+_colors_ The array of colors to query the color with the largest lightness value.
+_colorObj_ Optional boolean that makes the function return a custom object with factor (lightness) and name of the color as keys. Default is false.
 
 **Returns:**
 The largest lightness value in the colors passed in or a custom object.
@@ -928,42 +929,40 @@ The largest lightness value in the colors passed in or a custom object.
 Gets the largest lightness value from the passed in colors.
 
 **Example:**
+
 ```javascript
-import { maxLightness } from 'huetiful-js'
+import { maxLightness } from "huetiful-js";
 
-let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"]
+let sample = ["b2c3f1", "#a1bd2f", "#f3bac1"];
 
-console.log(maxLightness(sample, true))
+console.log(maxLightness(sample, true));
 
 // { lightness: 80.94668903360088, name: '#f3bac1' }
-
 ```
 
 #### getComplimentaryHue
- 
+
 **Parameters:**
 
 _color_ The color to retrieve its complimentary hue.
- _colorObj_ Optional boolean whether to return an object with the result color hue family or just the result color. Default is false.
- 
+_colorObj_ Optional boolean whether to return an object with the result color hue family or just the result color. Default is false.
+
 **Returns:**
- An object with the hue family and complimentary color as keys.If colorObj is false, it just returns the resultant color.
- 
+An object with the hue family and complimentary color as keys.If colorObj is false, it just returns the resultant color.
+
 **Description:**
 Gets the complementary hue of the passed in color. The function is internally guarded against achromatic colors.
 
-
 **Example:**
+
 ```javascript
 import { getComplimentaryHue } from "huetiful-js";
 
- 
-console.log(getComplimentaryHue("pink", true))
+console.log(getComplimentaryHue("pink", true));
 //// { hue: 'blue-green', color: '#97dfd7ff' }
 
-console.log(getComplimentaryHue("purple"))
+console.log(getComplimentaryHue("purple"));
 // #005700ff
-
 ```
 
 ####
@@ -975,7 +974,7 @@ console.log(getComplimentaryHue("purple"))
 **Description:**
 
 **Example:**
-```javascript
 
+```javascript
 
 ```
