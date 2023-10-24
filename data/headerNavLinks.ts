@@ -1,5 +1,3 @@
-import { PenTool, Code, Wind } from 'react-feather'
-
 const headerNavLinks = [
   { href: '/blog', title: 'API' },
   { href: '/projects', title: 'Guides' },
