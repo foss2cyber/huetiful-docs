@@ -4,7 +4,7 @@ date: '2023-08-29'
 draft: false
 summary: A collection of wrapper functions over the default TailwindCSS palette
 layout: PostSimple
-canonicalUrl: https://prjctimg.github.io/huetiful/api/colors
+canonicalUrl: https://prjctimg.github.io/huetiful-docs/api/colors
 ---
 
 ### The **tailwindColors** wrapper
@@ -87,4 +87,59 @@ let red100 = colors("red", 100);
 
 console.log(red100)
 // #fee2e2
+```
+
+
+## Colorbrewer color scales
+
+There are 3 optios for colorBrewer schemes and they are packaged as stand alone wrapper functions which return different palettes that in different color options. The scheme options vary per scheme but the library has autocomplete support in code editors for all the available options.
+
+All the fuctions take one parameter, `scheme` and return an array of colors or throw an error if an invalid scheme is passed in.
+
+Below is the generic type definition of the functions.
+
+**Parameters:**
+`(scheme: schemeType): Color[]`
+_scheme_ The name of the scheme
+
+**Returns:**
+An array of colors in hex represantation.
+
+**Description:**
+A wrapper function for ColorBrewer's map of [schemeType] color schemes.
+
+**Example:**
+
+```javascript
+import {qualitative,sequential,diverging}
+
+
+console.log(qualitative("Accent"))
+// [
+  '#7fc97f', '#beaed4',
+  '#fdc086', '#ffff99',
+  '#386cb0', '#f0027f',
+  '#bf5b17', '#666666'
+]
+
+
+console.log(sequential("OrRd"))
+
+// [
+  '#fff7ec', '#fee8c8',
+  '#fdd49e', '#fdbb84',
+  '#fc8d59', '#ef6548',
+  '#d7301f', '#b30000',
+  '#7f0000'
+]
+
+
+console.log(diverging("Spectral"))
+//[
+  '#7fc97f', '#beaed4',
+  '#fdc086', '#ffff99',
+  '#386cb0', '#f0027f',
+  '#bf5b17', '#666666'
+]
+
 ```

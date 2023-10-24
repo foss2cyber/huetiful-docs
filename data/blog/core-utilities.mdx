@@ -4,7 +4,7 @@ date: '2023-08-29'
 draft: false
 summary: Utilities for performing various low level manipulations and such as querying/setting a color's channel value and other useful conversions.
 layout: PostSimple
-canonicalUrl: https://prjctimg.github.io/huetiful/api/core-utilities
+canonicalUrl: https://prjctimg.github.io/huetiful-docs/api/core-utilities
 ---
 
 #### alpha
@@ -162,6 +162,11 @@ Sets the value for the specified channel in a color.
 
 ```javascript
 import { setChannel } from 'huetiful-js'
+
+let myColor = setChannel('lch.h')('green',10)
+
+console.log(getChannel('lch.h')(myColor))
+// 10
 ```
 
 #### temp2Color
@@ -184,4 +189,44 @@ import { temp2Color } from 'huetiful-js'
 
 console.log(temp2Color(2542))
 // #ffa44a
+```
+
+#### num2rgb
+ 
+**Parameters:**
+`(num: number, hex = false): Color`
+ _num_ The number to convert to RGB
+ 
+**Returns:**
+color An RGB color object or hex string.
+
+**Description:**
+Returns the RGB color equivalent of any number between 0 and 16,777,215.
+
+**Example:**
+```javascript
+import { num2rgb } from 'huetiful-js'
+
+console.log(num2rgb(900, true))
+// #000384
+```
+
+#### rgb2num
+
+**Parameters:**
+`(color: Color): number`
+_color_ The color to convert to its numerical equivalent.
+
+**Returns:**
+The numerical value of the color from 0 to 16,777,215.
+
+**Description:**
+Returns the numerical equivalent of a color.
+
+**Example:**
+```javascript
+import { rgb2num } from 'huetiful-js'
+
+console.log(rgb2num("b2c3f1"))
+// 11715569
 ```

@@ -4,7 +4,7 @@ date: '2023-09-29'
 draft: false
 summary: Utilities for generating custom palettes.
 layout: PostSimple
-canonicalUrl: https://prjctimg.github.io/huetiful/api/palettes
+canonicalUrl: https://prjctimg.github.io/huetiful-docs/api/palettes
 ---
 
 #### base
@@ -12,20 +12,63 @@ canonicalUrl: https://prjctimg.github.io/huetiful/api/palettes
 **Parameters:**
 `(scheme: palette) => (color: Color, hex = false): Color[]`
 _scheme_ Any classic color scheme either "analogous"|"triadic"|"tetradic"|"complementary"|"splitComplementary"
-_hex_ Optional boolen to return lch color objects or hex codes in the result array. Default is false which returns LCH color objects.
+_hex_ Optional boolean to return lch color objects or hex codes in the result array. Default is false which returns LCH color objects.
 
 **Returns:**
 An array of 8 character hex codes. Elements in the array depend on the number of sample colors in the targeted scheme.
 
 **Description:**
-Generates a randomised classic color scheme from a single base color.
+Generates a randomized classic color scheme from a single base color.
 
 **Example:**
 
 ```javascript
-// Example
+import { base } from 'huetiful-js'
+
+console.log(base("triadic")("#a1bd2f", true))
+// [ '#a1bd2fff', '#00caffff', '#ff78c9ff' ]
 ```
 
+
+
+#### discoverPalettes
+**Parameters:**
+`(colors: Color[],scheme: "analogous" | "triadic" | "tetradic"| "complementary"): Color[] | object`
+_colors_ The array of colors to create palettes from. Preferably use 5 or more colors for better results.
+ _scheme_ (Optional) The palette type you want to return.
+ 
+
+**Returns:**
+An array of colors if the scheme parameter is specified else it returns an object of all the palette types as keys and their values as an array of colors. If no colors are valid for the palette types it returns an empty array for the palette results.
+ 
+ **Description:**
+ Takes an array of colors and finds the best matches for a set of predefined palettes. The function does not work on achromatic colors, you may use isAchromatic to filter grays from your collection before passing it to the function.
+ 
+ **Example:**
+
+```javascript
+
+import { discoverPalettes } from 'huetiful-js'
+
+let sample = [
+  "#ffff00",
+  "#00ffdc",
+  "#00ff78",
+  "#00c000",
+  "#007e00",
+  "#164100",
+  "#720000",
+  "#600000",
+  "#4e0000",
+  "#3e0000",
+  "#310000",
+]
+
+console.log(discoverPalettes(sample, "tetradic"))
+// [ '#ffff00ff', '#00ffdcff', '#310000ff', '#720000ff' ]
+
+```
+ 
 #### earthtone
 
 **Parameters:**
@@ -43,7 +86,12 @@ Creates a scale of a spline based interpolation between an earthtone and a color
 **Example:**
 
 ```javascript
-// Example
+import { earthtone } from 'huetiful-js'
+
+
+console.log(earthtone("pink", "clay", 5))
+// [ '#6a5c52ff', '#8d746aff', '#b38d86ff', '#d9a6a6ff', '#ffc0cbff' ]
+
 ```
 
 #### pastel
@@ -62,7 +110,10 @@ Returns a random pastel variant of the passed in color.
 **Example:**
 
 ```javascript
-// Example
+import { pastel } from 'huetiful-js'
+
+console.log(pastel("green", true))
+// #036103ff
 ```
 
 We can also create a palette of hue shifted colors from a single base color. The _hueShift_ utility can achieve the same:
@@ -126,6 +177,15 @@ An array containing the paired scheme.
 **Description:**
 Creates a scheme that consists of a base color that is incremented by a hueStep to get the final hue to pair with.The colors are interpolated via white or black.
 
+**Example:**
+```javascript
+import { pairedScheme } from 'huetiful-js'
+
+console.log(pairedScheme("green", 6, 4, "dark"))
+// [ '#008116ff', '#006945ff', '#184b4eff', '#007606ff' ]
+```
+
+
 #### getHue
 
 **Parameters:**
@@ -137,6 +197,37 @@ The name of the hue family for example red or green.
 **Description:**
 Gets the hue family which a acolor belongs to with the overtone included (if it has one.). For achromatic colors it returns the string "gray".
 
+**Example:**
 ```javascript
-// Example
+import { getHue } from 'huetiful-js'
+
+
+console.log(getHue("#310000"))
+// red
+```
+
+#### overtone
+**Parameters:**
+`(color: Color): string | boolean`
+_color_ The color to query its overtone.
+ 
+**Returns:**
+The name of the overtone hue. If an achromatic color is passed in it return the string gray otherwise if the color has no bias it returns false.
+
+**Description:**
+Returns the hue which is biasing the passed in color.
+
+**Example:**
+```javascript
+import { overtone } from 'huetiful-js'
+
+console.log(overtone("fefefe"))
+// 'gray'
+
+console.log(overtone("cyan"))
+// 'green'
+
+console.log(overtone("blue"))
+// false
+
 ```
