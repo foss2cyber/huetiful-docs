@@ -19,7 +19,7 @@ export default function Home({ posts }) {
           </h1>
           <div className="flex items-center space-x-5 py-6">
              {/* started btn */}
-             <a href="#latest">
+             <a href="#utilities">
               <button className="flex items-center gap-2 rounded-full border-2 border-[hsl(280,100%,60%)] px-5 py-2 text-xl transition delay-150 hover:bg-[hsl(280,100%,60%)]">
                 Get Started
               </button>
@@ -47,9 +47,9 @@ export default function Home({ posts }) {
           </div>
         </div>
         {/* hero section ends */}
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5" id='latest'>
+        <div className="space-y-2 pb-8 pt-6 md:space-y-5" id='utilities'>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest
+          Utilities
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
