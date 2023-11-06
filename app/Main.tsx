@@ -10,46 +10,9 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        {/* hero section starts here */}
-        <div className="mx-auto flex max-w-screen-xl flex-col items-center px-4 py-8 text-center lg:px-12 lg:py-16 ">
-          <h1 className="tracking-tigh text-center text-4xl font-extrabold lg:text-5xl">
-            <span className="text-[hsl(200,100%,60%)]">JavaScript library</span> for simple color
-            manipulations based on the
-            <span className="text-[hsl(280,100%,60%)]"> Culori API.</span>
-          </h1>
-          <div className="flex items-center space-x-5 py-6">
-             {/* started btn */}
-             <a href="#utilities">
-              <button className="flex items-center gap-2 rounded-full border-2 border-[hsl(280,100%,60%)] px-5 py-2 text-xl transition delay-150 hover:bg-[hsl(280,100%,60%)]">
-                Get Started
-              </button>
-            </a>
-            {/* github btn */}
-            <a href="https://github.com/prjctimg/huetiful" target="_blank">
-              <button className="flex items-center gap-2 rounded-full bg-[hsl(280,100%,60%)] px-5 py-2 text-xl transition delay-150 hover:bg-[hsl(200,100%,60%)]">
-                Github
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </button>
-            </a>
-          </div>
-        </div>
-        {/* hero section ends */}
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5" id='utilities'>
+        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-          Utilities
+            Latest
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
