@@ -2,7 +2,6 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
-import { formatDate } from 'pliny/utils/formatDate'
 
 const MAX_DISPLAY = 5
 
@@ -61,14 +60,14 @@ export default function Home({ posts }) {
             const { slug, date, title, summary, tags } = post
             return (
               <li key={slug} className="py-12">
-                <article className="bg-slate-100 rounded-md p-1 lg:p-2 sm:p-1 dark:bg-slate-900 shadow-none hover:shadow-md hover:shadow-gray-300 hover:dark:shadow-gray-500 transition delay-75 duration-200 ease-in">
+                <article className="bg-[#FBEAEB] rounded-md p-3 lg:p-4 sm:p-3 dark:bg-slate-900 shadow-none hover:shadow-md hover:shadow-gray-400 hover:dark:shadow-gray-500 transition delay-75 duration-200 ease-in">
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
+                    {/* <dl>
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                       </dd>
-                    </dl>
+            </dl> */}
                     <div className="space-y-5 xl:col-span-3">
                       <div className="space-y-6">
                         <div>
@@ -90,13 +89,26 @@ export default function Home({ posts }) {
                           {summary}
                         </div>
                       </div>
-                      <div className="text-base font-medium leading-6 hover:translate-x-2 transition duration-200 delay-75 ease-in-out">
+                      <div className="text-base w-10 h-auto p-2 bg-white dark:bg-slate-700 shadow-md shadow-primary-500 rounded-md font-medium leading-6 hover:translate-x-2 transition duration-200 delay-75 ease-in-out">
                         <Link
                           href={`/blog/${slug}`}
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                           aria-label={`Read "${title}"`}
                         >
-                          Read more &rarr;
+                          <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.8}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
                         </Link>
                       </div>
                     </div>
